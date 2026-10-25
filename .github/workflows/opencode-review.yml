@@ -8,7 +8,6 @@ jobs:
   review:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
       contents: read
       pull-requests: write
       issues: write
@@ -20,7 +19,7 @@ jobs:
 
       - uses: anomalyco/opencode/github@latest
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.GLM_API_KEY_FOR_GHACTIONS }}
+          ZHIPU_API_KEY: ${{ secrets.GLM_API_KEY_FOR_GHACTIONS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           model: zhipuai-coding-plan/glm-5.3-flash
